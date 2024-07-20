@@ -1,0 +1,9 @@
+{
+    "titre": "Titre numéro un",
+    "description": "description numéro un",
+    "contenu": "contenu numéro un",
+    "image": "../public/images/img1.jpg",
+    "comments": [
+        {"id": 1, "text": "text numero un","author": "author numero un"}
+    ]
+}
