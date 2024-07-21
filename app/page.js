@@ -1,15 +1,11 @@
-"use client"
+"use server"
 import Image from "next/image";
 import Link from "next/link";
 import HOME5 from "../public/images/img7.jpg";
 import myBaseDeDonnee from "./dataBase";
-import { useRouter } from 'next/navigation'
-export default function Home() {
-  const router = useRouter()
-  
-  const redirectionDetail = (id) => {
-    router.push(`/article/${id}`);
-  }
+export default async function Home() {
+
+
   return (
     <nav className="bg-orange-600 flex flex-col items-center justify-between">
       <ul className="py-4 px-6 rounded-full mt-4 bg-black flex text-white justify-center items-center gap-5">
@@ -50,7 +46,7 @@ export default function Home() {
                     <Image className="w-96 my-9 rounded-lg" src={article.image} alt="Vercel Logo" width={200} height={200} />
                     <h1>{article.titre}</h1>
                     <p>{article.description}</p>
-                    <button className="bg-black text-white rounded-md py-2 px-8" onClick={() => redirectionDetail(article.id)}>Voir plus</button>
+                    <Link className="bg-black text-white rounded-md py-2 px-8" href={`/article/${article.id}`}>Voir plus</Link>
                   </div>
                 </div>
               )
